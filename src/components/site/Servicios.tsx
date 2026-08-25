@@ -19,7 +19,7 @@ export function Servicios() {
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICIOS.map((servicio, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i % icons.length]!;
             return (
               <Reveal key={servicio.titulo} delay={i * 90}>
                 <article className="glass lift group h-full rounded-3xl p-7 hover:border-primary/40">

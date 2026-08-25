@@ -62,7 +62,7 @@ export function Galeria() {
         </div>
       </div>
 
-      {activa !== null && (
+      {activa !== null && fotos[activa] && (
         <div
           role="dialog"
           aria-modal="true"
