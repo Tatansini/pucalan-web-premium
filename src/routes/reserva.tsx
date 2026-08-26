@@ -232,7 +232,7 @@ function ReservaPage() {
         </ol>
 
         <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
-          <section className="rounded-2xl border border-border bg-white p-4 shadow-sm sm:p-8">
+          <section className="min-w-0 rounded-2xl border border-border bg-white p-4 shadow-sm sm:p-8">
             {paso === 0 && (
               <>
                 <h2 className="text-lg font-extrabold text-navy">
