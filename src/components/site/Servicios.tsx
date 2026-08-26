@@ -3,6 +3,12 @@ import { Reveal } from "./Reveal";
 import { SERVICIOS } from "@/lib/site";
 
 const icons = [Smile, Sparkles, Waves, Salad];
+const iconThemes = [
+  { bg: "bg-blue/12", text: "text-blue", border: "hover:border-blue/40" },
+  { bg: "bg-green/12", text: "text-green", border: "hover:border-green/40" },
+  { bg: "bg-blue/12", text: "text-blue", border: "hover:border-blue/40" },
+  { bg: "bg-green/12", text: "text-green", border: "hover:border-green/40" },
+];
 
 export function Servicios() {
   return (
@@ -20,10 +26,11 @@ export function Servicios() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICIOS.map((servicio, i) => {
             const Icon = icons[i % icons.length]!;
+            const theme = iconThemes[i % iconThemes.length]!;
             return (
               <Reveal key={servicio.titulo} delay={i * 90}>
-                <article className="glass lift group h-full rounded-3xl p-7 hover:border-primary/40">
-                  <span className="flex size-12 items-center justify-center rounded-2xl bg-primary/12 text-primary">
+                <article className={`glass lift group h-full rounded-3xl p-7 ${theme.border}`}>
+                  <span className={`flex size-12 items-center justify-center rounded-2xl ${theme.bg} ${theme.text}`}>
                     <Icon className="size-6" strokeWidth={1.2} />
                   </span>
                   <h3 className="mt-6 text-xl tracking-wide text-graphite">
@@ -39,7 +46,7 @@ export function Servicios() {
                         className="flex items-start gap-2 text-sm text-deep/85"
                       >
                         <Check
-                          className="mt-1 size-3.5 shrink-0 text-primary"
+                          className={`mt-1 size-3.5 shrink-0 ${theme.text}`}
                           strokeWidth={2}
                         />
                         {item}
