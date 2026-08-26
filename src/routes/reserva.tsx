@@ -350,7 +350,7 @@ function ReservaPage() {
                           key={h}
                           type="button"
                           onClick={() => setHora(h)}
-                          className={`min-h-11 rounded-lg border px-3 py-2.5 text-sm font-semibold transition-colors ${
+                          className={`min-h-11 min-w-0 rounded-lg border px-2 py-2.5 text-sm font-semibold transition-colors ${
                             hora === h
                               ? "border-blue bg-blue text-blue-foreground"
                               : "border-border bg-white text-navy hover:border-blue"
