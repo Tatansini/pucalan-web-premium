@@ -1,9 +1,6 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Star } from "lucide-react";
 import { WHATSAPP_GENERAL } from "@/lib/site";
 import fachadaAsset from "@/assets/fachada-clinica.jpg.asset.json";
-import paciente1 from "@/assets/paciente-1.jpg";
-import paciente2 from "@/assets/paciente-2.jpg";
-import logo3dAsset from "@/assets/logo-pucalan-3d-black.png.asset.json";
 
 export function Hero() {
   return (
@@ -18,49 +15,6 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Titular gigante centrado */}
         <div className="relative mx-auto max-w-4xl text-center">
-          {/* Paciente izquierda */}
-          <div className="absolute top-6 -left-40 hidden lg:block">
-            <div className="relative">
-              <img
-                src={paciente1}
-                alt="Paciente sonriendo tras su tratamiento"
-                className="size-36 rounded-[2rem] object-cover shadow-[var(--shadow-soft)]"
-                loading="lazy"
-              />
-              <span className="absolute -top-3 -right-3 flex size-11 items-center justify-center rounded-2xl bg-coral text-coral-foreground shadow-md">
-                <Sparkles className="size-5" />
-              </span>
-            </div>
-          </div>
-          {/* Paciente derecha */}
-          <div className="absolute top-24 -right-40 hidden lg:block">
-            <div className="relative">
-              <img
-                src={paciente2}
-                alt="Paciente feliz en la clínica"
-                className="size-36 rounded-[2rem] object-cover shadow-[var(--shadow-soft)]"
-                loading="lazy"
-              />
-              <span className="absolute -bottom-3 -left-3 flex size-11 items-center justify-center rounded-2xl bg-coral text-coral-foreground shadow-md">
-                <Star className="size-5" />
-              </span>
-            </div>
-          </div>
-
-          {/* Logo 3D protagonista */}
-          <div
-            className="mx-auto mb-8 w-fit"
-            style={{ perspective: "900px" }}
-          >
-            <img
-              src={logo3dAsset.url}
-              alt="Logo 3D Clínica Pucalán — salud y estética integral"
-              className="animate-float-3d w-64 drop-shadow-[0_35px_45px_oklch(0.27_0.09_262/0.28)] will-change-transform sm:w-80 lg:w-[26rem]"
-              width={1288}
-              height={764}
-              fetchPriority="high"
-            />
-          </div>
           <p className="mb-5 text-xs font-bold tracking-[0.35em] text-blue uppercase">
             Clínica Pucalán · Talcahuano · Brisas del Sol
           </p>
