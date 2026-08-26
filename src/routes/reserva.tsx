@@ -425,7 +425,7 @@ function ReservaPage() {
                   </label>
                 </div>
 
-                <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap">
+                <div className="mt-8 hidden flex-col-reverse gap-3 sm:flex sm:flex-row sm:flex-wrap">
                   <button
                     type="button"
                     onClick={() => setPaso(2)}
