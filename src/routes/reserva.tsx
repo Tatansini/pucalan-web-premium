@@ -308,7 +308,7 @@ function ReservaPage() {
                 <h2 className="text-lg font-extrabold text-navy">
                   3. Selecciona día y hora
                 </h2>
-                <div className="mt-5 flex gap-2 overflow-x-auto pb-2">
+                <div className="relative mt-5 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 after:pointer-events-none after:absolute after:bottom-2 after:right-0 after:top-0 after:w-6 after:bg-gradient-to-l after:from-white after:to-transparent">
                   {dias.map((d) => {
                     const sel = d.key === dia;
                     return (
@@ -319,7 +319,7 @@ function ReservaPage() {
                           setDia(d.key);
                           setHora("");
                         }}
-                        className={`flex min-w-16 shrink-0 flex-col items-center rounded-xl border px-2.5 py-2.5 transition-colors sm:min-w-20 sm:px-3 sm:py-3 ${
+                        className={`flex min-h-11 min-w-16 shrink-0 snap-start flex-col items-center justify-center rounded-xl border px-2.5 py-2.5 transition-colors sm:min-w-20 sm:px-3 sm:py-3 ${
                           sel
                             ? "border-blue bg-blue text-blue-foreground"
                             : "border-border bg-white text-navy hover:border-blue"
@@ -344,13 +344,13 @@ function ReservaPage() {
                     <p className="text-sm font-semibold text-navy">
                       Horarios disponibles · {fechaLarga}
                     </p>
-                    <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
+                    <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-5">
                       {horas.map((h) => (
                         <button
                           key={h}
                           type="button"
                           onClick={() => setHora(h)}
-                          className={`rounded-lg border px-3 py-2.5 text-sm font-semibold transition-colors ${
+                          className={`min-h-11 rounded-lg border px-3 py-2.5 text-sm font-semibold transition-colors ${
                             hora === h
                               ? "border-blue bg-blue text-blue-foreground"
                               : "border-border bg-white text-navy hover:border-blue"
