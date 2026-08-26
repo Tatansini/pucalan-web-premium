@@ -3,7 +3,7 @@ import { WHATSAPP_GENERAL } from "@/lib/site";
 import dienteHero from "@/assets/diente-hero.png";
 import paciente1 from "@/assets/paciente-1.jpg";
 import paciente2 from "@/assets/paciente-2.jpg";
-import logoAsset from "@/assets/logo-pucalan.png.asset.json";
+import logo3dAsset from "@/assets/logo-pucalan-3d.png.asset.json";
 
 export function Hero() {
   return (
@@ -47,14 +47,17 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Logo protagonista */}
-          <div className="animate-float mx-auto mb-8 w-fit">
+          {/* Logo 3D protagonista */}
+          <div
+            className="mx-auto mb-8 w-fit"
+            style={{ perspective: "900px" }}
+          >
             <img
-              src={logoAsset.url}
-              alt="Logo Clínica Pucalán — salud y estética integral"
-              className="size-36 rounded-full shadow-[var(--shadow-float)] ring-8 ring-background/70 sm:size-44 lg:size-52"
-              width={416}
-              height={416}
+              src={logo3dAsset.url}
+              alt="Logo 3D Clínica Pucalán — salud y estética integral"
+              className="animate-float-3d w-64 drop-shadow-[0_35px_45px_oklch(0.27_0.09_262/0.28)] will-change-transform sm:w-80 lg:w-[26rem]"
+              width={851}
+              height={513}
               fetchPriority="high"
             />
           </div>
