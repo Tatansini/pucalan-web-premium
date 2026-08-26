@@ -8,7 +8,7 @@ export function TopBar() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
           <a
             href={`tel:${CLINICA.telefonoRaw}`}
-            className="flex items-center gap-1.5 transition-colors hover:text-teal"
+            className="flex items-center gap-1.5 transition-colors hover:text-blue"
           >
             <Phone className="size-3.5" strokeWidth={1.6} />
             {CLINICA.telefono}
@@ -26,7 +26,7 @@ export function TopBar() {
           href={CLINICA.instagramUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-1.5 transition-colors hover:text-teal"
+          className="flex items-center gap-1.5 transition-colors hover:text-blue"
         >
           <Instagram className="size-3.5" strokeWidth={1.6} />
           {CLINICA.instagram}
