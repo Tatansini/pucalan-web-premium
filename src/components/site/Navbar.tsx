@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { NAV_LINKS, WHATSAPP_GENERAL } from "@/lib/site";
+import { NAV_LINKS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
