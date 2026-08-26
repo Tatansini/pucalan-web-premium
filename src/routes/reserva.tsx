@@ -456,8 +456,8 @@ function ReservaPage() {
             )}
           </section>
 
-          {/* Resumen */}
-          <aside className="h-fit rounded-2xl border border-border bg-white p-6 shadow-sm">
+          {/* Resumen - desktop */}
+          <aside className="hidden h-fit rounded-2xl border border-border bg-white p-6 shadow-sm lg:block">
             <p className="text-sm font-extrabold tracking-wide text-navy">
               Resumen de tu reserva
             </p>
@@ -506,6 +506,104 @@ function ReservaPage() {
               </p>
             </div>
           </aside>
+        </div>
+
+        {/* Resumen + acciones - mobile sticky */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
+          {paso >= 2 && (
+            <div className="flex gap-2 border-b border-border/60 bg-white/85 px-4 py-3 backdrop-blur-md">
+              {paso === 2 ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setPaso(1)}
+                    className="flex-1 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-navy"
+                  >
+                    Atrás
+                  </button>
+                  <button
+                    type="button"
+                    disabled={!hora}
+                    onClick={() => setPaso(3)}
+                    className="flex-1 rounded-full bg-blue px-4 py-2.5 text-sm font-bold text-blue-foreground disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    Continuar
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setPaso(2)}
+                    className="flex-1 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-navy"
+                  >
+                    Atrás
+                  </button>
+                  <a
+                    href={puedeConfirmar ? mensaje : undefined}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-disabled={!puedeConfirmar}
+                    onClick={(e) => !puedeConfirmar && e.preventDefault()}
+                    className={`flex-1 rounded-full px-4 py-2.5 text-center text-sm font-bold ${
+                      puedeConfirmar
+                        ? "bg-blue text-blue-foreground"
+                        : "cursor-not-allowed bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    Confirmar
+                  </a>
+                </>
+              )}
+            </div>
+          )}
+          <div
+            onClick={() => setResumenAbierto((v) => !v)}
+            className="border-t border-border bg-white/90 px-4 py-3 backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex min-w-0 items-center gap-2">
+                <Stethoscope className="size-4 shrink-0 text-blue" />
+                <span className="truncate text-sm font-semibold text-navy">
+                  {especialidad || "Por seleccionar"}
+                </span>
+              </div>
+              <div className="flex min-w-0 items-center gap-1.5">
+                <CalendarDays className="size-4 shrink-0 text-blue" />
+                <span className="truncate text-sm font-semibold text-blue">
+                  {fechaLarga ? `${fechaLarga}${hora ? ` · ${hora}` : ""}` : "Por seleccionar"}
+                </span>
+                <ChevronRight className={`size-4 shrink-0 text-muted-foreground transition-transform ${resumenAbierto ? "rotate-90" : ""}`} />
+              </div>
+            </div>
+            {resumenAbierto && (
+              <div className="mt-3 border-t border-border pt-3 text-sm">
+                <div className="flex items-start gap-3">
+                  <User className="mt-0.5 size-4 shrink-0 text-blue" />
+                  <div>
+                    <dt className="text-xs text-muted-foreground">Profesional</dt>
+                    <dd className="font-semibold text-navy">
+                      {profesional || "Por seleccionar"}
+                    </dd>
+                  </div>
+                </div>
+                <div className="mt-3 space-y-2 text-xs text-muted-foreground">
+                  <p className="flex items-start gap-2">
+                    <MapPin className="mt-0.5 size-3.5 shrink-0 text-blue" />
+                    {CLINICA.direccion}
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Phone className="size-3.5 shrink-0 text-blue" />
+                    {CLINICA.telefono}
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Clock className="size-3.5 shrink-0 text-blue" />
+                    Lun a Vie 9:00–20:00 · Sáb 9:00–15:00
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>
