@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { TopBar } from "@/components/site/TopBar";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { AccesosRapidos } from "@/components/site/AccesosRapidos";
 import { Servicios } from "@/components/site/Servicios";
 import { Equipo } from "@/components/site/Equipo";
 import { Tecnologia } from "@/components/site/Tecnologia";
