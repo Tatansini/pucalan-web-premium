@@ -327,7 +327,7 @@ function ReservaPage() {
                   </div>
                 )}
 
-                <div className="mt-8 flex gap-3">
+                <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row">
                   <button
                     type="button"
                     onClick={() => setPaso(1)}
@@ -389,7 +389,7 @@ function ReservaPage() {
                   </label>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap">
                   <button
                     type="button"
                     onClick={() => setPaso(2)}
@@ -403,7 +403,7 @@ function ReservaPage() {
                     rel="noreferrer"
                     aria-disabled={!puedeConfirmar}
                     onClick={(e) => !puedeConfirmar && e.preventDefault()}
-                    className={`rounded-full px-6 py-3 text-sm font-bold ${
+                    className={`rounded-full px-6 py-3 text-center text-sm font-bold ${
                       puedeConfirmar
                         ? "bg-blue text-blue-foreground hover:shadow-[var(--shadow-soft)]"
                         : "cursor-not-allowed bg-muted text-muted-foreground"
