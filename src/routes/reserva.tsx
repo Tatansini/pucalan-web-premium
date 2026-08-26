@@ -160,9 +160,9 @@ function ReservaPage() {
         </div>
       </div>
 
-      <main className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
-        {/* Stepper */}
-        <ol className="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <main className="mx-auto max-w-6xl px-5 py-8 pb-40 sm:px-8 sm:py-12 lg:pb-12">
+        {/* Stepper - desktop */}
+        <ol className="mb-8 hidden grid-cols-2 gap-2 sm:grid sm:grid-cols-4">
           {PASOS.map((p, i) => {
             const activo = i === paso;
             const hecho = i < paso;
@@ -191,6 +191,41 @@ function ReservaPage() {
                 >
                   {p}
                 </span>
+              </li>
+            );
+          })}
+        </ol>
+
+        {/* Stepper - mobile horizontal */}
+        <ol className="mb-6 flex items-center justify-between gap-1 sm:hidden">
+          {PASOS.map((p, i) => {
+            const activo = i === paso;
+            const hecho = i < paso;
+            return (
+              <li key={p} className="flex min-w-0 flex-1 items-center">
+                <div className="flex flex-col items-center">
+                  <span
+                    className={`flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                      activo || hecho
+                        ? "bg-blue text-blue-foreground"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {hecho ? <Check className="size-4" /> : i + 1}
+                  </span>
+                  {activo && (
+                    <span className="mt-1 text-center text-[10px] font-semibold leading-tight text-navy">
+                      {p}
+                    </span>
+                  )}
+                </div>
+                {i < PASOS.length - 1 && (
+                  <div
+                    className={`mx-1 h-0.5 flex-1 rounded-full ${
+                      hecho ? "bg-blue" : "bg-blue/20"
+                    }`}
+                  />
+                )}
               </li>
             );
           })}
