@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { NAV_LINKS, WHATSAPP_GENERAL } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-graphite/80 transition-colors duration-300 hover:text-primary"
+              className="text-sm font-medium tracking-wide text-navy/70 transition-colors duration-300 hover:text-blue"
             >
               {link.label}
             </a>
@@ -39,9 +39,12 @@ export function Navbar() {
             href={WHATSAPP_GENERAL}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-primary px-6 py-2.5 text-sm tracking-wide text-primary-foreground transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-soft)]"
+            className="group flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] py-2.5 pr-2.5 pl-6 text-sm font-bold text-navy transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-soft)]"
           >
             Reservar hora
+            <span className="flex size-8 items-center justify-center rounded-full bg-navy text-navy-foreground transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRight className="size-4" />
+            </span>
           </a>
         </div>
 
@@ -49,7 +52,7 @@ export function Navbar() {
           type="button"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setOpen((v) => !v)}
-          className="rounded-full border border-border/70 p-2 text-graphite md:hidden"
+          className="rounded-full border border-border/70 p-2 text-navy md:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -63,7 +66,7 @@ export function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block py-1 text-sm tracking-wide text-graphite"
+                  className="block py-1 text-sm font-medium tracking-wide text-navy"
                 >
                   {link.label}
                 </a>
@@ -74,7 +77,7 @@ export function Navbar() {
             href={WHATSAPP_GENERAL}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 block rounded-full bg-primary px-6 py-3 text-center text-sm tracking-wide text-primary-foreground"
+            className="mt-4 block rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-center text-sm font-bold text-navy"
           >
             Reservar hora
           </a>
