@@ -3,6 +3,12 @@ import { Reveal } from "./Reveal";
 import { SERVICIOS } from "@/lib/site";
 
 const icons = [Smile, Sparkles, Waves, Salad];
+const iconThemes = [
+  { wrapper: "bg-blue/12 text-blue hover:border-blue/40", check: "text-blue" },
+  { wrapper: "bg-green/12 text-green hover:border-green/40", check: "text-green" },
+  { wrapper: "bg-blue/12 text-blue hover:border-blue/40", check: "text-blue" },
+  { wrapper: "bg-green/12 text-green hover:border-green/40", check: "text-green" },
+];
 
 export function Servicios() {
   return (
