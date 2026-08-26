@@ -72,7 +72,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Panel teal con diente 3D */}
+        {/* Panel gris con diente 3D */}
         <div className="relative mt-16 overflow-hidden rounded-[3rem] bg-teal/70 px-6 pt-14 pb-0 sm:px-12">
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div className="animate-silk absolute -top-24 left-1/4 size-[26rem] rounded-full bg-background/60 blur-[100px]" />

@@ -18,7 +18,7 @@ export function Footer() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm tracking-wide text-background/70 transition-colors duration-300 hover:text-teal-soft"
+              className="text-sm tracking-wide text-background/70 transition-colors duration-300 hover:text-teal"
             >
               {l.label}
             </a>
@@ -30,7 +30,7 @@ export function Footer() {
             href={WHATSAPP_GENERAL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-sm text-background/70 transition-colors duration-300 hover:text-teal-soft"
+            className="flex items-center gap-2 text-sm text-background/70 transition-colors duration-300 hover:text-teal"
           >
             <MessageCircle className="size-4" strokeWidth={1.4} />
             {CLINICA.telefono}
@@ -39,7 +39,7 @@ export function Footer() {
             href={CLINICA.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-sm text-background/70 transition-colors duration-300 hover:text-teal-soft"
+            className="flex items-center gap-2 text-sm text-background/70 transition-colors duration-300 hover:text-teal"
           >
             <Instagram className="size-4" strokeWidth={1.4} />
             {CLINICA.instagram}
