@@ -77,7 +77,6 @@ function Index() {
         <Equipo />
         <Tecnologia />
         <Galeria />
-        <Confianza />
         <Contacto />
       </main>
       <Footer />
