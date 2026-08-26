@@ -18,7 +18,13 @@ const title = "Reserva de horas online | Clínica Pucalán Talcahuano";
 const description =
   "Reserva tu hora en Clínica Pucalán: elige especialidad, profesional, día y horario disponible. Confirmación inmediata por WhatsApp. Brisas del Sol, Talcahuano.";
 
+type ReservaSearch = { esp?: string; prof?: string };
+
 export const Route = createFileRoute("/reserva")({
+  validateSearch: (search: Record<string, unknown>): ReservaSearch => ({
+    esp: typeof search.esp === "string" ? search.esp : undefined,
+    prof: typeof search.prof === "string" ? search.prof : undefined,
+  }),
   head: () => ({
     meta: [
       { title },
@@ -79,9 +85,18 @@ function proximosDias(cantidad: number) {
 const PASOS = ["Especialidad", "Profesional", "Día y hora", "Tus datos"];
 
 function ReservaPage() {
-  const [paso, setPaso] = useState(0);
-  const [especialidad, setEspecialidad] = useState("");
-  const [profesional, setProfesional] = useState("");
+  const { esp, prof } = Route.useSearch();
+  const espInicial = RESERVA.some((r) => r.especialidad === esp) ? esp! : "";
+  const profInicial =
+    espInicial &&
+    RESERVA.find((r) => r.especialidad === espInicial)?.profesionales.includes(
+      prof ?? "",
+    )
+      ? prof!
+      : "";
+  const [paso, setPaso] = useState(profInicial ? 2 : espInicial ? 1 : 0);
+  const [especialidad, setEspecialidad] = useState(espInicial);
+  const [profesional, setProfesional] = useState(profInicial);
   const [dia, setDia] = useState<string>("");
   const [hora, setHora] = useState("");
   const [nombre, setNombre] = useState("");
