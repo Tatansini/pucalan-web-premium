@@ -6,23 +6,19 @@ import resolucionAsset from "@/assets/resolucion-sanitaria-pucalan.jpg.asset.jso
 export function Confianza() {
   return (
     <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
-      <Reveal className="mx-auto max-w-5xl text-center">
-        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
-          <img
-            src={resolucionAsset.url}
-            alt="Clínica Pucalán cuenta con Resolución Sanitaria otorgada por la SEREMI de Salud de la Región del Biobío"
-            className="w-full object-cover"
-            loading="lazy"
-          />
-        </div>
+      <Reveal>
         <a
           href={WHATSAPP_GENERAL}
           target="_blank"
           rel="noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-blue px-7 py-4 text-sm font-semibold text-blue-foreground transition-colors duration-300 hover:bg-blue/90"
+          className="block w-full overflow-hidden"
         >
-          <MessageCircle className="size-4" strokeWidth={2} />
-          Reservar hora
+          <img
+            src={resolucionAsset.url}
+            alt="Clínica Pucalán cuenta con Resolución Sanitaria otorgada por la SEREMI de Salud de la Región del Biobío"
+            className="h-auto w-full max-h-[420px] object-cover object-center sm:max-h-[520px]"
+            loading="lazy"
+          />
         </a>
       </Reveal>
     </section>
