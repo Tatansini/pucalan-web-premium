@@ -1,6 +1,6 @@
 import { ArrowUpRight, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { WHATSAPP_GENERAL } from "@/lib/site";
-import dienteHero from "@/assets/diente-hero.png";
+import fachadaAsset from "@/assets/fachada-clinica.jpg.asset.json";
 import paciente1 from "@/assets/paciente-1.jpg";
 import paciente2 from "@/assets/paciente-2.jpg";
 import logo3dAsset from "@/assets/logo-pucalan-3d-black.png.asset.json";
@@ -131,14 +131,16 @@ export function Hero() {
             </div>
           </div>
 
-          <img
-            src={dienteHero}
-            alt="Diente 3D luminoso rodeado de ondas de seda"
-            className="animate-float relative mx-auto w-64 sm:w-80 lg:w-96"
-            width={768}
-            height={768}
-            fetchPriority="high"
-          />
+          <div className="relative mx-auto w-fit">
+            <img
+              src={fachadaAsset.url}
+              alt="Fachada de Clínica Pucalán en Brisas del Sol, Talcahuano"
+              className="animate-float relative mx-auto aspect-[4/5] w-72 rounded-t-[2.5rem] border-8 border-background object-cover shadow-[var(--shadow-float)] sm:w-96 lg:w-[26rem]"
+              width={1200}
+              height={1600}
+              fetchPriority="high"
+            />
+          </div>
 
           <div className="relative z-10 -mt-6 flex justify-center pb-6">
             <span className="flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-xs font-bold tracking-wide text-navy-foreground">
