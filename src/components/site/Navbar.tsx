@@ -39,7 +39,7 @@ export function Navbar() {
             href={WHATSAPP_GENERAL}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-2 rounded-full bg-[var(--gradient-brand)] py-2.5 pr-2.5 pl-6 text-sm font-bold text-navy transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-soft)]"
+            className="group flex items-center gap-2 rounded-full bg-blue py-2.5 pr-2.5 pl-6 text-sm font-bold text-blue-foreground transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-soft)]"
           >
             Reservar hora
             <span className="flex size-8 items-center justify-center rounded-full bg-navy text-navy-foreground transition-transform duration-300 group-hover:rotate-45">
@@ -77,7 +77,7 @@ export function Navbar() {
             href={WHATSAPP_GENERAL}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 block rounded-full bg-[var(--gradient-brand)] px-6 py-3 text-center text-sm font-bold text-navy"
+            className="mt-4 block rounded-full bg-blue px-6 py-3 text-center text-sm font-bold text-blue-foreground"
           >
             Reservar hora
           </a>

@@ -55,7 +55,7 @@ export function Equipo() {
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-7 w-full rounded-full border border-primary/40 px-5 py-3 text-xs tracking-wide text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+                  className="mt-7 w-full rounded-full border border-blue/40 px-5 py-3 text-xs tracking-wide text-blue transition-colors duration-300 hover:bg-blue hover:text-blue-foreground"
                 >
                   Agendar con {p.nombre.split(" ").slice(-2).join(" ")}
                 </a>
