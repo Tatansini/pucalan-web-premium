@@ -61,6 +61,7 @@
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --animate-float: float 6s ease-in-out infinite;
+  --animate-float-3d: float-3d 8s ease-in-out infinite;
   --animate-silk: silk 20s ease-in-out infinite;
   --animate-silk-slow: silk 28s ease-in-out infinite reverse;
   --animate-soft-pulse: soft-pulse 2.8s ease-in-out infinite;
@@ -181,6 +182,13 @@
 @keyframes float {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   50% { transform: translate3d(0, -22px, 0) scale(1.03); }
+}
+
+@keyframes float-3d {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(8deg) rotateY(-14deg) scale(1); }
+  25% { transform: translate3d(0, -14px, 0) rotateX(-6deg) rotateY(0deg) scale(1.02); }
+  50% { transform: translate3d(0, -24px, 0) rotateX(8deg) rotateY(14deg) scale(1.04); }
+  75% { transform: translate3d(0, -14px, 0) rotateX(-6deg) rotateY(0deg) scale(1.02); }
 }
 
 @keyframes silk {
