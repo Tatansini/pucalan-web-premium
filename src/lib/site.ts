@@ -29,6 +29,39 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
+// Datos para el widget "Reserva tu hora" (formato web de clínica)
+export const RESERVA = [
+  {
+    especialidad: "Odontología general",
+    profesionales: ["Dra. Giselle Mosqueira"],
+  },
+  {
+    especialidad: "Endodoncia",
+    profesionales: ["Dr. Ignacio Herrera M."],
+  },
+  {
+    especialidad: "Ortodoncia",
+    profesionales: ["Camila Muñoz"],
+  },
+  {
+    especialidad: "Medicina estética facial",
+    profesionales: ["Dra. Giselle Mosqueira"],
+  },
+  {
+    especialidad: "Estética corporal y depilación láser",
+    profesionales: ["Equipo Clínica Pucalán"],
+  },
+  {
+    especialidad: "Nutrición",
+    profesionales: ["Carolina Díaz Manríquez"],
+  },
+];
+
+export const waReserva = (especialidad: string, profesional: string) =>
+  wa(
+    `Hola, quiero reservar una hora de ${especialidad} con ${profesional} en Clínica Pucalán`,
+  );
+
 export const SERVICIOS = [
   {
     titulo: "Odontología",
