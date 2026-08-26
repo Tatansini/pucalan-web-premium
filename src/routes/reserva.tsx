@@ -104,6 +104,7 @@ function ReservaPage() {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [prevision, setPrevision] = useState("Particular");
+  const [resumenAbierto, setResumenAbierto] = useState(false);
 
   const dias = useMemo(() => proximosDias(12), []);
   const profesionales =
