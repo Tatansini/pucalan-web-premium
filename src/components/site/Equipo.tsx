@@ -17,10 +17,18 @@ export function Equipo() {
           {EQUIPO.map((p, i) => (
             <Reveal key={p.nombre} delay={i * 90}>
               <article className="glass lift flex h-full flex-col items-center rounded-3xl p-8 text-center hover:border-primary/40">
-                {/* Foto sugerida: equipo-{nombre}.jpg (retrato circular 400x400) */}
-                <span className="flex size-24 items-center justify-center rounded-full bg-[var(--gradient-brand)] font-display text-2xl font-light tracking-[0.15em] text-primary-foreground">
-                  {p.iniciales}
-                </span>
+                {p.foto ? (
+                  <img
+                    src={p.foto}
+                    alt={`${p.nombre} — ${p.especialidad} en Clínica Pucalán`}
+                    loading="lazy"
+                    className="size-28 rounded-full object-cover object-top ring-4 ring-primary/15"
+                  />
+                ) : (
+                  <span className="flex size-28 items-center justify-center rounded-full bg-[var(--gradient-brand)] font-display text-2xl font-light tracking-[0.15em] text-primary-foreground">
+                    {p.iniciales}
+                  </span>
+                )}
                 <h3 className="mt-6 text-lg tracking-wide text-graphite">
                   {p.nombre}
                 </h3>

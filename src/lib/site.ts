@@ -84,6 +84,7 @@ export const EQUIPO = [
     especialidad: "Directora",
     detalle: ["Odontología", "Estética facial"],
     agendar: "Giselle Mosqueira",
+    foto: null as string | null,
   },
   {
     nombre: "Dr. Ignacio Herrera M.",
@@ -95,6 +96,7 @@ export const EQUIPO = [
       "Eliminación del dolor",
     ],
     agendar: "el Dr. Ignacio Herrera",
+    foto: "/__l5e/assets-v1/72c7bc41-848e-4b53-9f75-303d0d23d36f/equipo-ignacio.jpg" as string | null,
   },
   {
     nombre: "Camila Muñoz",
@@ -107,6 +109,7 @@ export const EQUIPO = [
       "Tratamiento de primera infancia",
     ],
     agendar: "Camila Muñoz",
+    foto: "/__l5e/assets-v1/9f1b8932-b3fb-43e7-997b-518274d90ab4/equipo-camila.jpg" as string | null,
   },
   {
     nombre: "Carolina Díaz Manríquez",
@@ -119,5 +122,6 @@ export const EQUIPO = [
       "Seguimiento por WhatsApp · Consulta $30.000",
     ],
     agendar: "Carolina Díaz",
+    foto: "/__l5e/assets-v1/bd5d6066-fd75-44b0-bb95-d852efbcedaf/equipo-carolina.jpg" as string | null,
   },
 ];
