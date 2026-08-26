@@ -66,7 +66,7 @@ export function Contacto() {
                 href={WHATSAPP_GENERAL}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-10 block rounded-full bg-primary px-8 py-4 text-center text-sm tracking-wide text-primary-foreground transition-transform duration-300 hover:scale-[1.02]"
+                className="mt-10 block rounded-full bg-blue px-8 py-4 text-center text-sm tracking-wide text-blue-foreground transition-transform duration-300 hover:scale-[1.02]"
               >
                 Reservar por WhatsApp
               </a>

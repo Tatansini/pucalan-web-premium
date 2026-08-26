@@ -31,7 +31,7 @@ export function Hero() {
               href={WHATSAPP_GENERAL}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-3 rounded-full bg-[var(--gradient-brand)] py-3 pr-3 pl-8 text-base font-bold text-navy transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-float)]"
+              className="group flex items-center gap-3 rounded-full bg-blue py-3 pr-3 pl-8 text-base font-bold text-blue-foreground transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-float)]"
             >
               Reservar por WhatsApp
               <span className="flex size-10 items-center justify-center rounded-full bg-navy text-navy-foreground transition-transform duration-300 group-hover:rotate-45">
