@@ -1,58 +1,69 @@
-import { Smile, Sparkles, Waves, Salad, Check } from "lucide-react";
+import { Smile, Sparkles, Waves, Salad, Check, ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { SERVICIOS } from "@/lib/site";
+import { SectionHead } from "./SectionHead";
+import { SERVICIOS, wa } from "@/lib/site";
 
 const icons = [Smile, Sparkles, Waves, Salad];
 const iconThemes = [
-  { bg: "bg-blue/12", text: "text-blue", border: "hover:border-blue/40" },
-  { bg: "bg-green/12", text: "text-green", border: "hover:border-green/40" },
-  { bg: "bg-blue/12", text: "text-blue", border: "hover:border-blue/40" },
-  { bg: "bg-green/12", text: "text-green", border: "hover:border-green/40" },
+  { bg: "bg-blue/10", text: "text-blue" },
+  { bg: "bg-green/12", text: "text-green" },
+  { bg: "bg-blue/10", text: "text-blue" },
+  { bg: "bg-green/12", text: "text-green" },
 ];
 
 export function Servicios() {
   return (
-    <section id="servicios" className="relative py-28 sm:py-36">
+    <section id="servicios" className="bg-muted/40 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <p className="text-[0.62rem] tracking-[0.38em] text-primary">
-            ÁREAS DE ATENCIÓN
-          </p>
-          <h2 className="mt-5 text-3xl tracking-wide text-graphite sm:text-4xl">
-            Cuatro especialidades, un mismo estándar de cuidado.
-          </h2>
-        </Reveal>
+        <SectionHead
+          overline="Áreas de atención"
+          title="Especialidades de la clínica"
+          description="Cuatro áreas clínicas integradas en un mismo lugar, con profesionales especializados y equipamiento propio."
+        />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICIOS.map((servicio, i) => {
             const Icon = icons[i % icons.length]!;
             const theme = iconThemes[i % iconThemes.length]!;
             return (
-              <Reveal key={servicio.titulo} delay={i * 90}>
-                <article className={`glass lift group h-full rounded-3xl p-7 ${theme.border}`}>
-                  <span className={`flex size-12 items-center justify-center rounded-2xl ${theme.bg} ${theme.text}`}>
-                    <Icon className="size-6" strokeWidth={1.2} />
+              <Reveal key={servicio.titulo} delay={i * 80}>
+                <article className="flex h-full flex-col rounded-xl border border-border bg-card p-7 shadow-sm transition-shadow duration-300 hover:shadow-md">
+                  <span
+                    className={`flex size-12 items-center justify-center rounded-lg ${theme.bg} ${theme.text}`}
+                  >
+                    <Icon className="size-6" strokeWidth={1.6} />
                   </span>
-                  <h3 className="mt-6 text-xl tracking-wide text-graphite">
+                  <h3 className="mt-5 text-lg font-bold text-navy">
                     {servicio.titulo}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {servicio.descripcion}
                   </p>
-                  <ul className="mt-6 space-y-2 border-t border-border/60 pt-5">
+                  <ul className="mt-5 flex-1 space-y-2 border-t border-border pt-5">
                     {servicio.items.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-sm text-deep/85"
+                        className="flex items-start gap-2 text-sm text-foreground/80"
                       >
                         <Check
                           className={`mt-1 size-3.5 shrink-0 ${theme.text}`}
-                          strokeWidth={2}
+                          strokeWidth={2.2}
                         />
                         {item}
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href={wa(
+                      `Hola, quiero reservar una hora de ${servicio.titulo} en Clínica Pucalán`,
+                    )}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:underline"
+                  >
+                    Reservar hora
+                    <ArrowRight className="size-4" strokeWidth={2} />
+                  </a>
                 </article>
               </Reveal>
             );

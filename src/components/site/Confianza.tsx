@@ -1,24 +1,32 @@
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { WHATSAPP_GENERAL } from "@/lib/site";
 
 export function Confianza() {
   return (
-    <section className="px-5 py-16 sm:px-8">
-      <Reveal className="mx-auto max-w-7xl">
-        <div className="flex flex-col items-center gap-6 rounded-[2.5rem] bg-[linear-gradient(120deg,color-mix(in_oklab,var(--blue-pastel)_45%,white),color-mix(in_oklab,var(--primary)_38%,white))] px-8 py-14 text-center sm:flex-row sm:text-left">
-          <span className="glass flex size-16 shrink-0 items-center justify-center rounded-2xl text-primary">
-            <BadgeCheck className="size-8" strokeWidth={1.3} />
-          </span>
-          <div>
-            <p className="text-[0.62rem] tracking-[0.38em] text-deep">
-              AUTORIZACIÓN SANITARIA
-            </p>
-            <p className="mt-4 font-display text-xl leading-relaxed font-light tracking-wide text-graphite sm:text-2xl">
-              Clínica Pucalán cuenta con Resolución Sanitaria otorgada por la
-              SEREMI de Salud de la Región del Biobío.
-            </p>
-          </div>
+    <section className="bg-navy px-5 py-16 sm:px-8 sm:py-20">
+      <Reveal className="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center sm:flex-row sm:text-left">
+        <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-blue text-blue-foreground">
+          <BadgeCheck className="size-8" strokeWidth={1.6} />
+        </span>
+        <div className="flex-1">
+          <p className="text-xs font-bold tracking-[0.22em] text-blue-foreground/70 uppercase">
+            Autorización sanitaria
+          </p>
+          <p className="mt-3 text-xl leading-relaxed font-semibold text-navy-foreground sm:text-2xl">
+            Clínica Pucalán cuenta con Resolución Sanitaria otorgada por la
+            SEREMI de Salud de la Región del Biobío.
+          </p>
         </div>
+        <a
+          href={WHATSAPP_GENERAL}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-blue px-7 py-4 text-sm font-semibold text-blue-foreground transition-colors duration-300 hover:bg-blue/90"
+        >
+          <MessageCircle className="size-4" strokeWidth={2} />
+          Reservar hora
+        </a>
       </Reveal>
     </section>
   );
