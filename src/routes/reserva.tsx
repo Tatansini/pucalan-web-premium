@@ -161,14 +161,14 @@ function ReservaPage() {
 
       <main className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
         {/* Stepper */}
-        <ol className="mb-8 grid gap-2 sm:grid-cols-4">
+        <ol className="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {PASOS.map((p, i) => {
             const activo = i === paso;
             const hecho = i < paso;
             return (
               <li
                 key={p}
-                className={`flex items-center gap-3 rounded-xl border px-4 py-3 ${
+                className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 sm:gap-3 sm:px-4 sm:py-3 ${
                   activo
                     ? "border-blue bg-white shadow-sm"
                     : hecho
@@ -186,7 +186,7 @@ function ReservaPage() {
                   {hecho ? <Check className="size-4" /> : i + 1}
                 </span>
                 <span
-                  className={`text-sm font-semibold ${activo || hecho ? "text-navy" : "text-muted-foreground"}`}
+                  className={`truncate text-xs font-semibold sm:text-sm ${activo || hecho ? "text-navy" : "text-muted-foreground"}`}
                 >
                   {p}
                 </span>
@@ -196,7 +196,7 @@ function ReservaPage() {
         </ol>
 
         <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
-          <section className="rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-8">
+          <section className="rounded-2xl border border-border bg-white p-4 shadow-sm sm:p-8">
             {paso === 0 && (
               <>
                 <h2 className="text-lg font-extrabold text-navy">
@@ -283,7 +283,7 @@ function ReservaPage() {
                           setDia(d.key);
                           setHora("");
                         }}
-                        className={`flex min-w-20 shrink-0 flex-col items-center rounded-xl border px-3 py-3 transition-colors ${
+                        className={`flex min-w-16 shrink-0 flex-col items-center rounded-xl border px-2.5 py-2.5 transition-colors sm:min-w-20 sm:px-3 sm:py-3 ${
                           sel
                             ? "border-blue bg-blue text-blue-foreground"
                             : "border-border bg-white text-navy hover:border-blue"
@@ -327,7 +327,7 @@ function ReservaPage() {
                   </div>
                 )}
 
-                <div className="mt-8 flex gap-3">
+                <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row">
                   <button
                     type="button"
                     onClick={() => setPaso(1)}
@@ -389,7 +389,7 @@ function ReservaPage() {
                   </label>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap">
                   <button
                     type="button"
                     onClick={() => setPaso(2)}
@@ -403,7 +403,7 @@ function ReservaPage() {
                     rel="noreferrer"
                     aria-disabled={!puedeConfirmar}
                     onClick={(e) => !puedeConfirmar && e.preventDefault()}
-                    className={`rounded-full px-6 py-3 text-sm font-bold ${
+                    className={`rounded-full px-6 py-3 text-center text-sm font-bold ${
                       puedeConfirmar
                         ? "bg-blue text-blue-foreground hover:shadow-[var(--shadow-soft)]"
                         : "cursor-not-allowed bg-muted text-muted-foreground"
