@@ -37,7 +37,7 @@ export function AccesosRapidos() {
             <Reveal key={a.titulo} delay={i * 80}>
               <a
                 href={a.href}
-                className="glass lift group flex h-full flex-col items-start rounded-3xl p-6 hover:border-blue/40"
+                className="group flex h-full flex-col items-start rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-blue/30"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-blue/12 text-blue transition-colors duration-300 group-hover:bg-blue group-hover:text-blue-foreground">
                   <a.icon className="size-6" strokeWidth={1.4} />

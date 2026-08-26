@@ -14,7 +14,7 @@ export function ReservaWidget() {
   return (
     <div
       id="reserva"
-      className="glass-strong w-full rounded-3xl p-6 sm:p-8"
+      className="w-full rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-8"
     >
       <div className="flex items-center gap-3">
         <span className="flex size-11 items-center justify-center rounded-2xl bg-blue text-blue-foreground">
@@ -39,7 +39,7 @@ export function ReservaWidget() {
               setEspecialidad(e.target.value);
               setProfesional("");
             }}
-            className="w-full appearance-none rounded-2xl border border-border bg-background px-4 py-3.5 text-sm text-navy outline-none transition-colors focus:border-blue"
+            className="w-full appearance-none rounded-xl border border-border bg-muted/50 px-4 py-3.5 text-sm text-navy outline-none transition-colors focus:border-blue focus:bg-white"
           >
             <option value="" disabled>
               Especialidad
@@ -59,7 +59,7 @@ export function ReservaWidget() {
             value={profesional}
             onChange={(e) => setProfesional(e.target.value)}
             disabled={!especialidad}
-            className="w-full appearance-none rounded-2xl border border-border bg-background px-4 py-3.5 text-sm text-navy outline-none transition-colors focus:border-blue disabled:opacity-50"
+            className="w-full appearance-none rounded-xl border border-border bg-muted/50 px-4 py-3.5 text-sm text-navy outline-none transition-colors focus:border-blue focus:bg-white disabled:opacity-50"
           >
             <option value="" disabled>
               Profesional
