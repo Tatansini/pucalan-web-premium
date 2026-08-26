@@ -53,6 +53,8 @@
   --color-teal-foreground: var(--teal-foreground);
   --color-blue: var(--blue);
   --color-blue-foreground: var(--blue-foreground);
+  --color-green: var(--green);
+  --color-green-foreground: var(--green-foreground);
   --color-coral: var(--coral);
   --color-coral-foreground: var(--coral-foreground);
   --color-mist: var(--mist);
@@ -87,19 +89,21 @@
   --input: oklch(0.92 0.012 245);
   --ring: oklch(0.6 0.19 258);
 
-  /* Confident palette: navy #0A1D4D, gray #B8BBBF, blue #2E7CF6, coral #FF8A3D */
+  /* Confident palette: navy #0A1D4D, gray #B8BBBF, blue #2E7CF6, green #34B8A6, coral #FF8A3D */
   --navy: oklch(0.27 0.09 262);
   --navy-foreground: oklch(0.99 0 0);
   --teal: oklch(0.75 0.01 250);
   --teal-foreground: oklch(0.27 0.09 262);
   --blue: oklch(0.6 0.19 258);
   --blue-foreground: oklch(0.99 0 0);
+  --green: oklch(0.65 0.12 170);
+  --green-foreground: oklch(0.99 0 0);
   --coral: oklch(0.72 0.17 55);
   --coral-foreground: oklch(0.99 0 0);
   --mist: oklch(0.95 0.012 220);
 
-  --gradient-brand: linear-gradient(90deg, var(--teal), var(--blue));
-  --gradient-brand-soft: linear-gradient(135deg, var(--teal), var(--blue));
+  --gradient-brand: linear-gradient(90deg, var(--green), var(--blue));
+  --gradient-brand-soft: linear-gradient(135deg, var(--green), var(--blue));
   --shadow-soft: 0 20px 60px -25px oklch(0.27 0.09 262 / 0.22);
   --shadow-float: 0 30px 80px -30px oklch(0.27 0.09 262 / 0.32);
 
