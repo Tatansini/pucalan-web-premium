@@ -87,11 +87,24 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Panel gris con diente 3D */}
-        <div className="relative mt-16 overflow-hidden rounded-[3rem] bg-teal/70 px-6 pt-14 pb-0 sm:px-12">
+        {/* Panel gris con fachada real de la clínica */}
+        <div className="relative mt-16 flex min-h-[28rem] flex-col overflow-hidden rounded-[3rem] bg-teal/70 sm:min-h-[32rem] lg:min-h-[36rem]">
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div className="animate-silk absolute -top-24 left-1/4 size-[26rem] rounded-full bg-background/60 blur-[100px]" />
             <div className="animate-silk-slow absolute right-10 bottom-0 size-[22rem] rounded-full bg-blue/25 blur-[100px]" />
+          </div>
+
+          {/* Fachada de la clínica ocupando todo el panel */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src={fachadaAsset.url}
+              alt="Fachada de Clínica Pucalán en Brisas del Sol, Talcahuano"
+              className="size-full object-cover"
+              width={1200}
+              height={1600}
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-background/40" />
           </div>
 
           {/* Etiquetas flotantes */}
@@ -131,18 +144,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-fit">
-            <img
-              src={fachadaAsset.url}
-              alt="Fachada de Clínica Pucalán en Brisas del Sol, Talcahuano"
-              className="animate-float relative mx-auto aspect-[4/5] w-72 rounded-t-[2.5rem] border-8 border-background object-cover shadow-[var(--shadow-float)] sm:w-96 lg:w-[26rem]"
-              width={1200}
-              height={1600}
-              fetchPriority="high"
-            />
-          </div>
-
-          <div className="relative z-10 -mt-6 flex justify-center pb-6">
+          <div className="relative z-10 mt-auto flex justify-center pb-6">
             <span className="flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-xs font-bold tracking-wide text-navy-foreground">
               <ShieldCheck className="size-4 text-teal" />
               Resolución Sanitaria SEREMI · Estacionamiento propio
