@@ -8,7 +8,7 @@ import { Servicios } from "@/components/site/Servicios";
 import { Equipo } from "@/components/site/Equipo";
 import { Tecnologia } from "@/components/site/Tecnologia";
 import { Galeria } from "@/components/site/Galeria";
-import { Confianza } from "@/components/site/Confianza";
+
 import { Contacto } from "@/components/site/Contacto";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
@@ -77,7 +77,6 @@ function Index() {
         <Equipo />
         <Tecnologia />
         <Galeria />
-        <Confianza />
         <Contacto />
       </main>
       <Footer />
