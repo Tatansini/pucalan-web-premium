@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ReservaRouteImport } from './routes/reserva'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReservaRoute = ReservaRouteImport.update({
+  id: '/reserva',
+  path: '/reserva',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/reserva': typeof ReservaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/reserva': typeof ReservaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/reserva': typeof ReservaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/reserva'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/reserva'
+  id: '__root__' | '/' | '/reserva'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ReservaRoute: typeof ReservaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reserva': {
+      id: '/reserva'
+      path: '/reserva'
+      fullPath: '/reserva'
+      preLoaderRoute: typeof ReservaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ReservaRoute: ReservaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
