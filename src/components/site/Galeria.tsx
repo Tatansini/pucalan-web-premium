@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { Reveal } from "./Reveal";
-// Fotos sugeridas: box-dental.jpg, sala-rayos-x.jpg, recepcion.jpg,
-// sala-estetica.jpg, box-estetica-facial.jpg, box-nutricion.jpg
-import boxDental from "@/assets/clinica-box-dental.jpg";
-import rayosX from "@/assets/clinica-rayos-x.jpg";
-import recepcion from "@/assets/clinica-recepcion.jpg";
-import salaEstetica from "@/assets/clinica-sala-estetica.jpg";
-import esteticaFacial from "@/assets/clinica-estetica-facial.jpg";
-import nutricion from "@/assets/clinica-nutricion.jpg";
+// Fotos reales de Clínica Pucalán (CDN)
+import boxDental from "@/assets/clinica-box-dental.jpg.asset.json";
+import boxDental2 from "@/assets/clinica-box-dental-2.jpg.asset.json";
+import rayosX from "@/assets/clinica-rayos-x.jpg.asset.json";
+import salaEstetica from "@/assets/clinica-sala-estetica.jpg.asset.json";
+import salaFacial from "@/assets/clinica-sala-facial.jpg.asset.json";
+import salaProcedimientos from "@/assets/clinica-sala-procedimientos.jpg.asset.json";
 
 const fotos = [
-  { src: boxDental, alt: "Box dental de Clínica Pucalán con sillón odontológico" },
-  { src: rayosX, alt: "Sala de radiografías digitales habilitada de la clínica" },
-  { src: recepcion, alt: "Recepción y sala de espera de Clínica Pucalán" },
-  { src: salaEstetica, alt: "Sala de estética corporal con láser diodo y HIFU" },
-  { src: esteticaFacial, alt: "Box de medicina estética facial de la clínica" },
-  { src: nutricion, alt: "Consulta de nutrición con equipo de bioimpedancia" },
+  { src: boxDental.url, alt: "Box dental de Clínica Pucalán con sillón odontológico" },
+  { src: salaEstetica.url, alt: "Sala de estética corporal con láser diodo y HIFU" },
+  { src: rayosX.url, alt: "Sala de rayos X habilitada de Clínica Pucalán" },
+  { src: boxDental2.url, alt: "Segundo box dental con equipamiento completo" },
+  { src: salaFacial.url, alt: "Sala de estética facial con camilla profesional" },
+  { src: salaProcedimientos.url, alt: "Sala de procedimientos de medicina estética" },
 ];
 
 export function Galeria() {
