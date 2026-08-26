@@ -18,8 +18,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-400 ease-out",
-        scrolled ? "glass-strong py-3" : "bg-transparent py-5",
+        "sticky top-0 z-50 transition-all duration-400 ease-out",
+        scrolled ? "glass-strong py-3" : "bg-background py-5",
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">

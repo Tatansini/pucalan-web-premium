@@ -17,7 +17,7 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-navy/60" />
 
-        <div className="relative mx-auto max-w-7xl px-5 pt-40 pb-56 sm:px-8 sm:pt-48 sm:pb-64">
+        <div className="relative mx-auto max-w-7xl px-5 pt-20 pb-56 sm:px-8 sm:pt-28 sm:pb-64">
           <p className="text-xs font-bold tracking-[0.35em] text-navy-foreground/80 uppercase">
             Clínica Pucalán · Brisas del Sol, Talcahuano
           </p>
