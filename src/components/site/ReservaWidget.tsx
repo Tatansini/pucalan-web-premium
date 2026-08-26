@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CalendarCheck, ChevronDown } from "lucide-react";
-import { RESERVA, waReserva } from "@/lib/site";
+import { RESERVA } from "@/lib/site";
 
 export function ReservaWidget() {
   const [especialidad, setEspecialidad] = useState("");
@@ -75,7 +75,7 @@ export function ReservaWidget() {
       </div>
 
       <a
-        href="/reserva"
+        href={listo ? `/reserva?esp=${encodeURIComponent(especialidad)}&prof=${encodeURIComponent(profesional)}` : "/reserva"}
         target="_blank"
         rel="noreferrer"
         className="mt-4 block rounded-full bg-blue px-6 py-3.5 text-center text-sm font-bold tracking-wide text-blue-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-[var(--shadow-soft)]"

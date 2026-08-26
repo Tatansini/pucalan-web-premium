@@ -36,7 +36,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href={WHATSAPP_GENERAL}
+            href="/reserva"
             target="_blank"
             rel="noreferrer"
             className="group flex items-center gap-2 rounded-full bg-blue py-2.5 pr-2.5 pl-6 text-sm font-bold text-blue-foreground transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-[var(--shadow-soft)]"
@@ -74,7 +74,7 @@ export function Navbar() {
             ))}
           </ul>
           <a
-            href={WHATSAPP_GENERAL}
+            href="/reserva"
             target="_blank"
             rel="noreferrer"
             className="mt-4 block rounded-full bg-blue px-6 py-3 text-center text-sm font-bold text-blue-foreground"

@@ -1,12 +1,19 @@
 import { CalendarCheck, Stethoscope, Building2, MapPin } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const accesos = [
+const accesos: {
+  icon: typeof CalendarCheck;
+  titulo: string;
+  descripcion: string;
+  href: string;
+  nuevaPestana?: boolean;
+}[] = [
   {
     icon: CalendarCheck,
     titulo: "Reserva tu hora",
     descripcion: "Agenda en línea por especialidad y profesional.",
-    href: "#reserva",
+    nuevaPestana: true,
+    href: "/reserva",
   },
   {
     icon: Stethoscope,
@@ -37,6 +44,7 @@ export function AccesosRapidos() {
             <Reveal key={a.titulo} delay={i * 80}>
               <a
                 href={a.href}
+                {...(a.nuevaPestana ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="group flex h-full flex-col items-start rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-blue/30"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-blue/12 text-blue transition-colors duration-300 group-hover:bg-blue group-hover:text-blue-foreground">
