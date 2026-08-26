@@ -21,10 +21,12 @@ const description =
 type ReservaSearch = { esp?: string; prof?: string };
 
 export const Route = createFileRoute("/reserva")({
-  validateSearch: (search: Record<string, unknown>): ReservaSearch => ({
-    esp: typeof search.esp === "string" ? search.esp : undefined,
-    prof: typeof search.prof === "string" ? search.prof : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): ReservaSearch => {
+    const out: ReservaSearch = {};
+    if (typeof search["esp"] === "string") out.esp = search["esp"];
+    if (typeof search["prof"] === "string") out.prof = search["prof"];
+    return out;
+  },
   head: () => ({
     meta: [
       { title },
@@ -110,7 +112,7 @@ function ReservaPage() {
   const horas = diaSel?.date.getDay() === 6 ? HORAS_SABADO : HORAS_SEMANA;
 
   const fechaLarga = diaSel
-    ? `${DIAS[diaSel.date.getDay()]} ${diaSel.date.getDate()} de ${MESES[diaSel.date.getMonth()]}`
+    ? `${DIAS[diaSel.date.getDay()] ?? ""} ${diaSel.date.getDate()} de ${MESES[diaSel.date.getMonth()] ?? ""}`
     : "";
 
   const puedeConfirmar =
@@ -288,13 +290,13 @@ function ReservaPage() {
                         }`}
                       >
                         <span className="text-[11px] font-semibold uppercase opacity-80">
-                          {DIAS[d.date.getDay()].slice(0, 3)}
+                          {(DIAS[d.date.getDay()] ?? "").slice(0, 3)}
                         </span>
                         <span className="text-lg font-extrabold">
                           {d.date.getDate()}
                         </span>
                         <span className="text-[11px] opacity-80">
-                          {MESES[d.date.getMonth()].slice(0, 3)}
+                          {(MESES[d.date.getMonth()] ?? "").slice(0, 3)}
                         </span>
                       </button>
                     );
