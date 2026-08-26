@@ -75,19 +75,16 @@ export function ReservaWidget() {
       </div>
 
       <a
-        href={listo ? waReserva(especialidad, profesional) : undefined}
+        href="/reserva"
         target="_blank"
         rel="noreferrer"
-        aria-disabled={!listo}
-        onClick={(e) => !listo && e.preventDefault()}
-        className={`mt-4 block rounded-full px-6 py-3.5 text-center text-sm font-bold tracking-wide transition-all duration-300 ${
-          listo
-            ? "bg-blue text-blue-foreground hover:scale-[1.02] hover:shadow-[var(--shadow-soft)]"
-            : "cursor-not-allowed bg-muted text-muted-foreground"
-        }`}
+        className="mt-4 block rounded-full bg-blue px-6 py-3.5 text-center text-sm font-bold tracking-wide text-blue-foreground transition-all duration-300 hover:scale-[1.02] hover:shadow-[var(--shadow-soft)]"
       >
-        {listo ? "Reservar por WhatsApp" : "Selecciona especialidad y profesional"}
+        Ver horas disponibles
       </a>
+      <p className="mt-2 text-center text-xs text-muted-foreground">
+        Se abre la reserva web en una nueva pestaña.
+      </p>
     </div>
   );
 }
