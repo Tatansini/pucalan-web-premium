@@ -146,14 +146,14 @@ function ReservaPage() {
       </header>
 
       <div className="border-b border-border bg-navy">
-        <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-10">
-          <p className="text-xs font-bold tracking-[0.3em] text-navy-foreground/70 uppercase">
+        <div className="mx-auto max-w-6xl px-5 py-5 sm:px-8 sm:py-10">
+          <p className="text-[10px] font-bold tracking-[0.3em] text-navy-foreground/70 uppercase sm:text-xs">
             Reserva web
           </p>
-          <h1 className="mt-3 text-3xl font-extrabold text-navy-foreground sm:text-4xl">
+          <h1 className="mt-2 text-2xl font-extrabold text-navy-foreground sm:mt-3 sm:text-4xl">
             Agenda tu hora en línea
           </h1>
-          <p className="mt-2 max-w-2xl text-sm text-navy-foreground/80">
+          <p className="mt-2 max-w-2xl text-xs text-navy-foreground/80 sm:text-sm">
             Selecciona especialidad, profesional y el horario que más te acomode.
             Confirmamos tu cita al instante por WhatsApp.
           </p>
