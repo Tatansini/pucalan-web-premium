@@ -29,8 +29,8 @@ export function Servicios() {
             const theme = iconThemes[i % iconThemes.length]!;
             return (
               <Reveal key={servicio.titulo} delay={i * 90}>
-                <article className={`glass lift group h-full rounded-3xl p-7 ${theme.wrapper}`}>
-                  <span className={`flex size-12 items-center justify-center rounded-2xl ${theme.wrapper.split(" ")[0]} ${theme.wrapper.split(" ")[1]}`}>
+                <article className={`glass lift group h-full rounded-3xl p-7 ${theme.border}`}>
+                  <span className={`flex size-12 items-center justify-center rounded-2xl ${theme.bg} ${theme.text}`}>
                     <Icon className="size-6" strokeWidth={1.2} />
                   </span>
                   <h3 className="mt-6 text-xl tracking-wide text-graphite">
@@ -46,7 +46,7 @@ export function Servicios() {
                         className="flex items-start gap-2 text-sm text-deep/85"
                       >
                         <Check
-                          className={`mt-1 size-3.5 shrink-0 ${theme.check}`}
+                          className={`mt-1 size-3.5 shrink-0 ${theme.text}`}
                           strokeWidth={2}
                         />
                         {item}
