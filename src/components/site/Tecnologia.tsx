@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
-import { useReveal } from "@/hooks/use-reveal";
 import salaEstetica from "@/assets/clinica-sala-estetica.jpg.asset.json";
 
 const datos = [
@@ -11,29 +9,9 @@ const datos = [
 ];
 
 function Contador({ valor, sufijo }: { valor: number; sufijo: string }) {
-  const { ref, visible } = useReveal<HTMLSpanElement>();
-  const [n, setN] = useState(0);
-
-  useEffect(() => {
-    if (!visible) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      setN(valor);
-      return;
-    }
-    let frame = 0;
-    const total = 48;
-    const id = setInterval(() => {
-      frame += 1;
-      setN(Math.round(valor * (1 - Math.pow(1 - frame / total, 3))));
-      if (frame >= total) clearInterval(id);
-    }, 22);
-    return () => clearInterval(id);
-  }, [visible, valor]);
-
   return (
     <span className="text-4xl font-extrabold text-blue">
-      {n}
+      {valor}
       {sufijo}
     </span>
   );
