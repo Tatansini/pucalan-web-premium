@@ -3,6 +3,7 @@ import { WHATSAPP_GENERAL } from "@/lib/site";
 import dienteHero from "@/assets/diente-hero.png";
 import paciente1 from "@/assets/paciente-1.jpg";
 import paciente2 from "@/assets/paciente-2.jpg";
+import logoAsset from "@/assets/logo-pucalan.png.asset.json";
 
 export function Hero() {
   return (
@@ -46,8 +47,19 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Logo protagonista */}
+          <div className="animate-float mx-auto mb-8 w-fit">
+            <img
+              src={logoAsset.url}
+              alt="Logo Clínica Pucalán — salud y estética integral"
+              className="size-36 rounded-full shadow-[var(--shadow-float)] ring-8 ring-background/70 sm:size-44 lg:size-52"
+              width={416}
+              height={416}
+              fetchPriority="high"
+            />
+          </div>
           <p className="mb-5 text-xs font-bold tracking-[0.35em] text-blue uppercase">
-            Talcahuano · Brisas del Sol
+            Clínica Pucalán · Talcahuano · Brisas del Sol
           </p>
           <h1 className="text-5xl leading-[1.02] font-extrabold text-navy sm:text-7xl">
             Tu sonrisa,{" "}
