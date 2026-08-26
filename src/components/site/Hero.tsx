@@ -1,9 +1,6 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Star } from "lucide-react";
 import { WHATSAPP_GENERAL } from "@/lib/site";
 import fachadaAsset from "@/assets/fachada-clinica.jpg.asset.json";
-import paciente1 from "@/assets/paciente-1.jpg";
-import paciente2 from "@/assets/paciente-2.jpg";
-import logo3dAsset from "@/assets/logo-pucalan-3d-black.png.asset.json";
 
 export function Hero() {
   return (
